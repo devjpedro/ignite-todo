@@ -1,0 +1,83 @@
+.taskContainer {
+  max-width: 46rem;
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0 1.25rem;
+}
+
+.taskContainer header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.allTasks strong, .completedTasks strong {
+  background-color: var(--gray-400);
+  color: var(--white);
+  font-size: 0.75rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 50px;
+}
+
+.allTasks {
+  color: var(--blue-300);
+  font-weight: 700;
+  font-size: 0.875rem;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.completedTasks {
+  color: var(--purple-300);
+  font-weight: 700;
+  font-size: 0.875rem;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+} 
+
+.tasks {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: 325px;
+  overflow: auto;
+}
+
+.tasks::-webkit-scrollbar {
+  width: 20px;
+}
+
+.tasks::-webkit-scrollbar-thumb {
+  background: var(--gray-400);
+  border-left: 8px solid var(--gray-600);
+}
+
+.tasks::-webkit-scrollbar-track {
+  background: var(--gray-600);
+}
+
+.noTasks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--gray-300);
+  border-top: 1px solid #333333;
+  padding-top: 4rem;
+  text-align: center;
+}
+
+.noTasks strong {
+  font-weight: bold;
+  margin-top: 1rem;
+  line-height: 1.6;
+}
