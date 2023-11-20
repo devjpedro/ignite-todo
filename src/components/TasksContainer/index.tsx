@@ -49,7 +49,7 @@ export function TasksContainer({
             <span>Crie tarefas e organize seus itens a fazer</span>
           </div>
         )}
-          <Reorder.Group axis="y" values={tasks} onReorder={setTasks} className={styles.tasks}>
+          <Reorder.Group axis="y" values={tasks} onReorder={setTasks} className={styles.listTasks}>
             {tasks.map((task) => {
             return (
               <Reorder.Item key={task.id} value={task}>

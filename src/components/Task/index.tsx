@@ -38,7 +38,7 @@ export function Task({
         name="task"
         id={task.id}
       />
-      <label htmlFor={task.id}>{title}</label>
+      <label htmlFor={task.id} title={title}>{title}</label>
       <button title="Apagar" onClick={handle}>
         <Trash size={24} />
       </button>
