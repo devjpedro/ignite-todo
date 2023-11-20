@@ -47,6 +47,7 @@ export function App() {
         handleCompleteTask={handleCompleteTask}
         handleDeleteTask={handleDeleteTask}
         tasks={tasks}
+        setTasks={setTasks}
       />
     </div>
   );

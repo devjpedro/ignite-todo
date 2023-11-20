@@ -1,3 +1,4 @@
+import { Reorder } from "framer-motion";
 import { ClipboardText } from "phosphor-react";
 import { TasksProps } from "../../App";
 import { Task } from "../Task";
@@ -7,12 +8,15 @@ interface TasksContainer {
   tasks: TasksProps[];
   handleDeleteTask: (task: TasksProps) => void;
   handleCompleteTask: (task: TasksProps) => void;
+  setTasks: React.Dispatch<React.SetStateAction<TasksProps[]>>
 }
 
 export function TasksContainer({
   tasks,
+  setTasks,
   handleCompleteTask,
   handleDeleteTask,
+  
 }: TasksContainer) {
   const amountTasks = tasks.length;
 
@@ -45,18 +49,23 @@ export function TasksContainer({
             <span>Crie tarefas e organize seus itens a fazer</span>
           </div>
         )}
-        {tasks.map((task) => {
-          return (
-            <Task
-              key={task.id}
-              isComplete={task.isComplete}
-              title={task.title}
-              task={task}
-              handleDeleteTask={handleDeleteTask}
-              handleCompleteTask={handleCompleteTask}
-            />
-          );
-        })}
+          <Reorder.Group axis="y" values={tasks} onReorder={setTasks} className={styles.tasks}>
+            {tasks.map((task) => {
+            return (
+              <Reorder.Item key={task.id} value={task}>
+                {
+                  <Task
+                  isComplete={task.isComplete}
+                  title={task.title}
+                  task={task}
+                  handleDeleteTask={handleDeleteTask}
+                  handleCompleteTask={handleCompleteTask}
+                />
+                }
+              </Reorder.Item>
+            );
+          })}
+          </Reorder.Group>
       </div>
     </main>
   );
