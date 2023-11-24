@@ -10,7 +10,6 @@ O Ignite Todo é uma aplicação de controle de tarefas no estilo to-do list, qu
 
 - ReactJS
 - Typescript
-- Framer Motion
 - Vite
 
 ## Link do Projeto
